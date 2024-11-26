@@ -1,0 +1,45 @@
+main.py
+
+funct view_posts:
+    while loop:
+        print options
+        get and validate options
+        call relevent function
+
+funct view_post:
+    while loop:
+        print options
+        get and validate options
+        call relevent function
+
+funct view_comments:
+    while loop:
+        print options
+        get and validate options
+        call relevent function
+
+funct view_random_posts:
+    posts = get_posts
+    for i <- 0 to 9 do
+        print post[rand_int(0, length(posts) )]
+
+funct view_top_posts:
+    find top commented posts
+    print posts
+
+funct view_comments
+    print get_comments(id)
+
+
+
+api.py
+
+funct get_posts:
+    return posts
+
+funct get_comments(p_id):
+    return comments
+
+fucnt post_comment(comment):
+    post(comment)
+    return response

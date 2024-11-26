@@ -1,0 +1,12 @@
+Test cases
+
+1. Ensure 10 posts are returned when fetching posts
+2. Ensure all comments from a post are printed 
+3. Ensure adding a comment returns correctly
+4. Ensure random posts are random
+
+
+Test Invalid user input
+1. non numeric
+3. empty response
+4. value outside range
