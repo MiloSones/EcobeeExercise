@@ -1,18 +1,18 @@
 main.py
 
-funct view_posts:
+funct view_posts_menu:
     while loop:
         print options
         get and validate options
         call relevent function
 
-funct view_post:
+funct view_post_menu:
     while loop:
         print options
         get and validate options
         call relevent function
 
-funct view_comments:
+funct view_comments_menu:
     while loop:
         print options
         get and validate options
@@ -29,7 +29,6 @@ funct view_top_posts:
 
 funct view_comments
     print get_comments(id)
-
 
 
 api.py
