@@ -1,0 +1,74 @@
+Blog Viewer
+
+Choose an option:
+1. View 10 random post titles
+2. View 10 most commented post titles
+3. exit
+Enter your choice (1-3): 1
+
+[1] - sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+[2] - qui est esse
+.
+.
+.
+[10] - ea molestias quasi exercitationem repellat qui ipsa sit aut
+
+Choose an option:
+1. View post content
+2. Back to post explorer
+Enter your choice (1-3): 1
+
+[Post] sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+ullam et saepe reiciendis voluptatem adipisci\n
+it amet autem assumenda provident rerum culpa\n
+quis hic commodi nesciunt rem tenetur doloremque ipsam iure\n
+quis sunt voluptatem rerum illo velit
+
+Choose an option:
+1. View comments
+2. Add comment
+3. Back to post explorer
+Enter your choice (1-3): 1
+
+[Eliseo@gardner.biz] id labore ex et quam laborum
+laudantium enim quasi est quidem magnam voluptate ipsam eos\n
+tempora quo necessitatibus\n
+dolor quam autem quasi\n
+reiciendis et nam sapiente accusantium
+
+[Eliseo@gardner.biz] id labore ex et quam laborum
+laudantium enim quasi est quidem magnam voluptate ipsam eos\n
+tempora quo necessitatibus\n
+dolor quam autem quasi\n
+reiciendis et nam sapiente accusantium
+
+[Eliseo@gardner.biz] id labore ex et quam laborum
+laudantium enim quasi est quidem magnam voluptate ipsam eos\n
+tempora quo necessitatibus\n
+dolor quam autem quasi\n
+reiciendis et nam sapiente accusantium
+
+Choose an option:
+1. View comments
+2. Add comment
+3. Back to post explorer
+Enter your choice (1-3): 2
+
+Enter your name: Joe Blogs
+Enter you email: joe@example.com
+Write your comment: laudantium enim quasi est quidem magnam voluptate ipsam eos
+Your comment has been added successfully!
+
+Choose an option:
+1. View 10 random post titles
+2. View 10 most commented post titles
+3. exit
+Enter your choice (1-3): a
+
+Please enter a number between 1 and 3
+
+Choose an option:
+1. View 10 random post titles
+2. View 10 most commented post titles
+3. exit
+Enter your choice (1-3): 3
