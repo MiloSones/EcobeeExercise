@@ -3,6 +3,7 @@ from io import StringIO
 from unittest.mock import patch, MagicMock
 from api import get_posts, post_comment, get_posts_comments
 from views import view_comments, view_posts_menu
+from helpers import get_input
 
 
 class TestApi(unittest.TestCase):
@@ -122,44 +123,26 @@ class TestPrint(unittest.TestCase):
         mock_helper.assert_called_once()
         self.assertEqual(output, expected_output)
 
-# class TestUserValidation(unittest.TestCase):
-#     @patch('sys.stdout', new_callable=StringIO)
-#     @patch('builtins.input')
-#     def test_nonnumeric_input(self, mock_input, mock_stdout):
-#         mock_input.side_effect = ['a', '1']
-#         view_posts_menu()
-
-#         self.assertEqual(mock_stdout.getvalue(),
-#         "Choose an option:\n"
-#         "1. View 10 random post titles\n"
-#         "2. View 10 most commented post titles\n"
-#         "3. exit\n"
-#         "Enter your choice (1-3): a\n"
-#         "Enter your choice (1-3): 1")
+class TestUserValidation(unittest.TestCase):
+    @patch('builtins.input')
+    def test_nonnumeric_input(self, mock_input):
+        mock_input.side_effect = ['a']
+        result = get_input(3)
+        self.assertEqual(result, -1)
 
 
-#     @patch('sys.stdout', new_callable=StringIO)
-#     @patch('builtins.input')
-#     def test_out_of_bounds(self, mock_input, mock_stdout):
-#         mock_input.side_effect = ['4', '1']
+    @patch('builtins.input')
+    def test_out_of_bounds(self, mock_input):
+        mock_input.side_effect = ['4']
+        result = get_input(3)
+        self.assertEqual(result, -1)
 
-#         view_posts_menu()
 
-#         self.assertEqual(mock_stdout.getvalue(),
-#         "Choose an option:\n"
-#         "1. View 10 random post titles\n"
-#         "2. View 10 most commented post titles\n"
-#         "3. exit\n"
-#         "Enter your choice (1-3): 4\n"
-#         "Enter your choice (1-3): 1")
-
-#     @patch('views.view_random_posts')
-#     @patch('builtins.input', return_value="1")
-#     def test_valid_input(self, mock_called_function):
-        
-#         view_posts_menu()
-
-#         mock_called_function.assert_called_once()
+    @patch('builtins.input', return_value="1")
+    def test_valid_input(self, mock_input):
+        mock_input.side_effect = ['1']
+        result = get_input(3)
+        self.assertEqual(result, 1)
 
 if __name__ == "__main__":
     unittest.main()
