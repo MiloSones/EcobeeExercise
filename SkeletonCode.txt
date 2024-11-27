@@ -42,3 +42,12 @@ funct get_comments(p_id):
 fucnt post_comment(comment):
     post(comment)
     return response
+
+
+
+helpers.py
+
+format_input(string)
+    strip whitespace
+    convert to number
+    return number or -1 if not valid
