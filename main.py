@@ -1,7 +1,8 @@
 from random import randrange
+from collections import Counter
 import sys
 from helpers import get_input
-from api import get_posts, get_comments, post_comment
+from api import get_posts, get_comments, post_comment, get_all_comments
 
 def view_posts_menu():
     print("Choose an option:")
@@ -36,7 +37,13 @@ def view_random_posts():
     view_post_menu()
 
 def view_top_posts():
-    pass
+    posts = get_posts()
+    comments = get_all_comments()
+    post_ids = [comment['postId'] for comment in comments]
+    top_ids = sorted(set(post_ids))
+    for i in range(10):
+        print(f"[Post] {posts[top_ids[i]]["title"]}")
+        print(posts[top_ids[i]]["body"])
 
 def view_comments():
     pass
