@@ -30,8 +30,9 @@ def view_post_menu(posts):
         value = get_input(11)
         if value == 11:
             view_posts_menu()
-        print(f"[Post] {posts[value]["title"]}\n")
-        print(f"{posts[value]["body"]}\n")
+        if 1 <= value <= 10:
+            print(f"[Post] {posts[value-1]["title"]}\n")
+            print(f"{posts[value-1]["body"]}\n")
     view_comments_menu(value)
 
 def view_comments_menu(post_id):
@@ -82,7 +83,21 @@ def view_comments(post_id):
 
 
 def add_comment(post_id):
-    pass
+    name = input("Enter your name: ")
+    email = input("Enter your email: ")
+    body = input("Write your comment: ")
+
+    comment = {
+        "name": name,
+        "emai": email,
+        "body": body,
+    }
+
+    if post_comment(post_id, comment) == 201:
+        print("Succefully added comment\n")
+    else:
+        print("Something went wrong!")
+
 
 print("Blog Viewer")
 while True:
