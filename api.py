@@ -27,11 +27,7 @@ def get_comments(post_id):
 
 def post_comment(post_id,comment):
     try:
-        r = requests.post(BASE_URL + f"posts/{post_id}/comments",json=, timeout=TIMEOUT)
-        if r.status_code == 201:
-            return r.json()
-
-        print(f"Status code: {r.status_code}")
-        return 0
+        r = requests.post(BASE_URL + f"posts/{post_id}/comments",json=comment, timeout=TIMEOUT)
+        return r.status_code
     except requests.exceptions.Timeout:
         print("Timed out")
