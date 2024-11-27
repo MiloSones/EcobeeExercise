@@ -14,6 +14,7 @@ def get_posts():
     except requests.exceptions.Timeout:
         print("Timed out")
 
+
 def get_posts_comments(post_id):
     try:
         r = requests.get(BASE_URL + f"posts/{post_id}/comments", timeout=TIMEOUT)
@@ -25,7 +26,7 @@ def get_posts_comments(post_id):
     except requests.exceptions.Timeout:
         print("Timed out")
 
-def get_all_comments(post_id):
+def get_all_comments():
     try:
         r = requests.get(BASE_URL + "comments", timeout=TIMEOUT)
         if r.status_code == 200:
