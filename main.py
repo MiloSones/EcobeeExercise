@@ -23,19 +23,32 @@ def view_posts_menu():
 
 def view_post_menu(posts):
     print("Choose an option:")
-    print("1.View post content")
-    print("2. Back to post explorer")
+    print("1-10. View post content")
+    print("11. Back to post explorer")
     value = -1
     while(value == -1):
-        value = get_input(1)
+        value = get_input(11)
         if value == 11:
             view_posts_menu()
         print(f"[Post] {posts[value]["title"]}\n")
-        print(f"{posts[value]["body"]}")
-    return
+        print(f"{posts[value]["body"]}\n")
+    view_comments_menu(value)
 
-def view_comments_menu():
-    pass
+def view_comments_menu(post_id):
+    print("Choose an option:")
+    print("1. View comments")
+    print("2. Add comment")
+    print("3. Back to post explorer")
+    value = -1
+    while(value == -1):
+        value = get_input(3)
+        if value == 1:
+            view_comments(post_id)
+        if value == 2:
+            add_comment(post_id)
+        if value ==3:
+            view_posts_menu()
+    return
 
 def view_random_posts():
     posts = get_posts()
@@ -44,23 +57,32 @@ def view_random_posts():
     for i in range(10):
         rand_int = randrange(0,post_count-1)
         random_posts.append(posts[rand_int])
-        print(f"[{i+1}] {random_posts[i]}")
+        print(f"[{i+1}] {random_posts[i]["title"]}")
         
     view_post_menu(random_posts)
 
 def view_top_posts():
     posts = get_posts()
     comments = get_all_comments()
+    top_posts = []
     post_ids = [comment['postId'] for comment in comments]
     top_ids = sorted(set(post_ids))
     for i in range(10):
-        print(f"[{i+1}] {posts[top_ids[i]]["title"]}")
+        top_posts.append(posts[top_ids[i]])
+        print(f"[{i+1}] {top_posts[i]["title"]}")
+
+    view_post_menu(top_posts)
 
 
+def view_comments(post_id):
+    post_comments = get_posts_comments(post_id)
+    for comment in post_comments:
+        print(f"[{comment["email"]}] {comment["name"]}\n")
+        print(f"{comment["body"]}\n")
 
-def view_comments():
+
+def add_comment(post_id):
     pass
-
 
 print("Blog Viewer")
 while True:
